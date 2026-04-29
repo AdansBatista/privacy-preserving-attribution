@@ -1,0 +1,117 @@
+================================================================
+Schmidt-Batista 2026 — Theorem 2 Dual-Bound Derivation
+================================================================
+
+HEADLINE PARAMETERS
+-------------------
+  Per-period DP:    eps=1.000, delta=1e-06, P=12, delta_P=1e-06
+  Transactions:     tau=$10000, sigma_T=$1000
+  Operational:      beta_event=0.10, beta_amount=0.10
+
+DERIVED QUANTITIES
+------------------
+  Per-period sigma_DP                = $52988
+  Composed eps_P (12-fold zCDP)      = 3.650
+  tanh(eps_P/2)                       = 0.9493
+
+THEOREM 2b — AMOUNT-DISCLOSURE BOUND  (k-independent)
+------------------------------------------------------
+  Tier 1 (alpha_a=0.05): Adv_amount <= 0.9993  [feasible if <= 0.10]
+  Tier 2 (alpha_a=0.50): Adv_amount <= 1.0000
+  Tier 3 (alpha_a=0.94): Adv_amount <= 1.0000
+
+Interpretation (Theorem 2b):
+  * Cohort size k does NOT appear in this bound — the DP guarantee
+    is per-neighboring-database and is not diluted by enlarging
+    the cohort.
+  * Feasibility for amount disclosure requires
+    alpha_a + tanh(eps_P/2) + delta_total < beta_amount.
+  * At the headline (eps=1.0, P=12), tanh(eps_P/2) alone exceeds
+    beta_amount=0.10. Meaningful amount-disclosure privacy at this
+    budget therefore requires either a tighter per-period eps OR a
+    relaxed beta_amount; this is a real constraint of standard
+    Gaussian-DP and is part of the paper's negative result.
+
+THEOREM 2a — EVENT-DETECTION BOUND  (k-dependent)
+--------------------------------------------------
+  Tier 1 (alpha_e=0.05): k* = 3,551
+  Tier 2 (alpha_e=0.50): k* = INFEASIBLE  (alpha_e >= beta_event)
+  Tier 3 (alpha_e=0.85): k* = INFEASIBLE  (alpha_e >= beta_event)
+
+  Regime crossover (k*sigma_T^2 = sigma_DP^2):  k = 2,808
+    Below this k, DP noise dominates and 2a saturates near 2b.
+    Above this k, cohort variance dominates and 1/sqrt(k) operates.
+
+SENSITIVITY SWEEP — k* (Theorem 2a) vs (alpha_e, sigma_T)
+at beta_event=0.10, eps=1.0, delta=1e-6, tau=$10k, P=12
+-----------------------------------------------------------------
+           sigma_T=$250 sigma_T=$500 sigma_T=$1000 sigma_T=$1500 sigma_T=$2000
+alpha=0.00            0            0             0             0             0
+alpha=0.02            0            0             0             0             0
+alpha=0.05        56803        14201          3551          1578           888
+alpha=0.08       591563       147891         36973         16433          9244
+alpha=0.09      2501423       625356        156339         69484         39085
+           sigma_T=$3000
+alpha=0.00             0
+alpha=0.02             0
+alpha=0.05           395
+alpha=0.08          4109
+alpha=0.09         17371
+
+Rows: alpha_e (event-detection aux-info richness)
+Cols: sigma_T  (legitimate-transaction std-dev, USD)
+Cell: ceiling(k*) — minimum cohort size for event-detection privacy
+
+SENSITIVITY — k* vs per-period eps  (alpha_e=0.05, sigma_T=$1000)
+-----------------------------------------------------------------
+  eps=0.25 -> sigma_DP=$211952   eps_P=0.872   k*=0
+  eps=0.50 -> sigma_DP=$105976   eps_P=1.772   k*=0
+  eps=1.00 -> sigma_DP=$52988    eps_P=3.650   k*=3,551
+  eps=2.00 -> sigma_DP=$26494    eps_P=7.728   k*=5,656
+  eps=4.00 -> sigma_DP=$13247    eps_P=17.165  k*=6,183
+
+Note: smaller per-period eps tightens both bounds (less DP noise to
+hide cohort variance, but also smaller per-record amount-disclosure
+advantage). The deployment trade-off is explicit.
+
+MONTE CARLO VERIFICATION — empirical LRT advantage vs closed form
+(N=20,000 replications per cohort size; alpha_e=0, headline params)
+------------------------------------------------------------------
+  k         closed_form   monte_carlo   rel_err 
+  100       0.0739        0.0763        +3.28   %
+  500       0.0693        0.0722        +4.29   %
+  1,000     0.0646        0.0623        -3.61   %
+  3,000     0.0523        0.0516        -1.46   %
+  10,000    0.0352        0.0290        -17.71  %
+  50,000    0.0174        0.0186        +7.15   %
+
+Closed-form is exact for the marginal Gaussian-vs-Gaussian LRT;
+Monte Carlo agrees within sampling noise (~1/sqrt(N)).
+
+================================================================
+HEADLINE SUMMARY
+================================================================
+
+  Theorem 2a event-detection k* (Tier 1 alpha_e=0.05,
+    sigma_T=$1000):                            3,551
+  Theorem 2a Tier 2/3 (alpha_e >= beta_event): INFEASIBLE
+  Theorem 2b amount-disclosure bound at Tier 1: 0.9993
+  Theorem 2b amount-disclosure bound at Tier 3: 1.0000
+
+Key results:
+  1. The 1/sqrt(k) scaling of the event-detection bound emerges from
+     cohort transaction variance, NOT DP composition. The original
+     manuscript's 1/sqrt(rho*k) scaling under Yeom-style membership
+     inference was a category error.
+
+  2. The amount-disclosure bound is k-independent. Standard Gaussian
+     DP at eps=1.0 / P=12 gives tanh(eps_P/2) ~= 0.95, dominating
+     beta_amount=0.10. Meaningful per-record amount privacy under
+     this budget is feasible only for very weak adversaries
+     (alpha_a + tanh(eps_P/2) + delta < beta_amount).
+
+  3. The two bounds quantify different threats. The mechanism
+     satisfies the application-layer privacy goal iff BOTH bounds
+     are met under the deployer's auxiliary-info assumptions.
+
+================================================================

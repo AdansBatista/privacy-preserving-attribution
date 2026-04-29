@@ -1,0 +1,65 @@
+Privacy-Preserving Attribution in Protocol-Level Taxation
+Replication package — License
+
+This repository contains two categories of artefacts under different licenses.
+
+================================================================================
+PAPER TEXT (Creative Commons Attribution 4.0 International)
+================================================================================
+
+The paper text in `manuscript/` (specifically the source file
+schmidt-batista-privacy-attribution-2026.md, the rendered PDF, and the build
+configuration) is licensed under the Creative Commons Attribution 4.0
+International License (CC-BY-4.0).
+
+You are free to:
+  - Share — copy and redistribute the material in any medium or format
+  - Adapt — remix, transform, and build upon the material
+for any purpose, even commercially.
+
+Under the following terms:
+  - Attribution — You must give appropriate credit, provide a link to the
+    license, and indicate if changes were made.
+
+The full license text is available at:
+  https://creativecommons.org/licenses/by/4.0/legalcode
+
+
+================================================================================
+CODE (MIT License)
+================================================================================
+
+The code in `derivation/` (the R script and its captured output) and
+`simulations/` (the Python attack-simulation workbench, configuration,
+results, and figures) is licensed under the MIT License.
+
+Copyright (c) 2026 Adans Schmidt Batista
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+================================================================================
+BIBLIOGRAPHY
+================================================================================
+
+`references.bib` is a bibliographic reference list. The bibliographic data
+itself is factual and not subject to copyright. The citation-style file
+`manuscript/chicago-fullnote-bibliography.csl` is from the official Citation
+Style Language repository under its own license (CC-BY-SA, see csl repo for
+the canonical text).

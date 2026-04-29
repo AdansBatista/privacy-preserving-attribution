@@ -1,0 +1,135 @@
+% pandoc_header.tex — shared LaTeX compatibility fixes for the article-class build.
+%
+% Included via `pandoc -H pandoc_header.tex ...` (see Makefile).
+% Purpose: keep pandoc's default LaTeX output compiling cleanly for a long
+% economics-paper draft (single column, article class, xelatex).
+
+\usepackage{booktabs}
+\usepackage{xparse}
+\usepackage{microtype}
+
+% --- Unicode → math-mode fallbacks (Paper 3 uses Greek letters, ≤, ∎ in body text;
+% Latin Modern Roman doesn't cover them, so we remap each to its TeX math equivalent
+% without changing the main font). Keep this in sync with the characters actually used.
+\usepackage{newunicodechar}
+\newunicodechar{α}{\ensuremath{\alpha}}
+\newunicodechar{β}{\ensuremath{\beta}}
+\newunicodechar{γ}{\ensuremath{\gamma}}
+\newunicodechar{δ}{\ensuremath{\delta}}
+\newunicodechar{ε}{\ensuremath{\varepsilon}}
+\newunicodechar{η}{\ensuremath{\eta}}
+\newunicodechar{θ}{\ensuremath{\theta}}
+\newunicodechar{κ}{\ensuremath{\kappa}}
+\newunicodechar{λ}{\ensuremath{\lambda}}
+\newunicodechar{μ}{\ensuremath{\mu}}
+\newunicodechar{ν}{\ensuremath{\nu}}
+\newunicodechar{π}{\ensuremath{\pi}}
+\newunicodechar{ρ}{\ensuremath{\rho}}
+\newunicodechar{σ}{\ensuremath{\sigma}}
+\newunicodechar{τ}{\ensuremath{\tau}}
+\newunicodechar{φ}{\ensuremath{\varphi}}
+\newunicodechar{ψ}{\ensuremath{\psi}}
+\newunicodechar{ω}{\ensuremath{\omega}}
+\newunicodechar{Δ}{\ensuremath{\Delta}}
+\newunicodechar{Σ}{\ensuremath{\Sigma}}
+\newunicodechar{Ω}{\ensuremath{\Omega}}
+\newunicodechar{≤}{\ensuremath{\leq}}
+\newunicodechar{≥}{\ensuremath{\geq}}
+\newunicodechar{≠}{\ensuremath{\neq}}
+\newunicodechar{≈}{\ensuremath{\approx}}
+\newunicodechar{∈}{\ensuremath{\in}}
+\newunicodechar{∉}{\ensuremath{\notin}}
+\newunicodechar{∀}{\ensuremath{\forall}}
+\newunicodechar{∃}{\ensuremath{\exists}}
+\newunicodechar{∑}{\ensuremath{\sum}}
+\newunicodechar{∏}{\ensuremath{\prod}}
+\newunicodechar{∎}{\ensuremath{\blacksquare}}
+\newunicodechar{→}{\ensuremath{\rightarrow}}
+\newunicodechar{←}{\ensuremath{\leftarrow}}
+\newunicodechar{↔}{\ensuremath{\leftrightarrow}}
+\newunicodechar{⟨}{\ensuremath{\langle}}
+\newunicodechar{⟩}{\ensuremath{\rangle}}
+\newunicodechar{⁰}{\ensuremath{^{0}}}
+\newunicodechar{¹}{\ensuremath{^{1}}}
+\newunicodechar{²}{\ensuremath{^{2}}}
+\newunicodechar{³}{\ensuremath{^{3}}}
+\newunicodechar{⁴}{\ensuremath{^{4}}}
+\newunicodechar{⁵}{\ensuremath{^{5}}}
+\newunicodechar{⁶}{\ensuremath{^{6}}}
+\newunicodechar{⁷}{\ensuremath{^{7}}}
+\newunicodechar{⁸}{\ensuremath{^{8}}}
+\newunicodechar{⁹}{\ensuremath{^{9}}}
+\newunicodechar{⁻}{\ensuremath{^{-}}}
+\newunicodechar{₀}{\ensuremath{_{0}}}
+\newunicodechar{₁}{\ensuremath{_{1}}}
+\newunicodechar{₂}{\ensuremath{_{2}}}
+\newunicodechar{₃}{\ensuremath{_{3}}}
+\newunicodechar{₄}{\ensuremath{_{4}}}
+\newunicodechar{₅}{\ensuremath{_{5}}}
+\newunicodechar{₆}{\ensuremath{_{6}}}
+\newunicodechar{₇}{\ensuremath{_{7}}}
+\newunicodechar{₈}{\ensuremath{_{8}}}
+\newunicodechar{₉}{\ensuremath{_{9}}}
+\newunicodechar{ₗ}{\ensuremath{_{\mathrm{l}}}}
+\newunicodechar{ₒ}{\ensuremath{_{\mathrm{o}}}}
+\newunicodechar{ₕ}{\ensuremath{_{\mathrm{h}}}}
+\newunicodechar{ᵢ}{\ensuremath{_{\mathrm{i}}}}
+\newunicodechar{ₙ}{\ensuremath{_{\mathrm{n}}}}
+\newunicodechar{ₘ}{\ensuremath{_{\mathrm{m}}}}
+\newunicodechar{ₐ}{\ensuremath{_{\mathrm{a}}}}
+
+% Pandoc's default template calls \xmpquote{...} inside the PDF metadata
+% (pdfkeywords). That macro comes from hyperxmp, but hyperxmp must load AFTER
+% hyperref — and header-includes runs before hyperref. Simplest workaround:
+% define \xmpquote as a pass-through so the keywords still get into the PDF
+% metadata without XMP quoting (which is a nice-to-have, not load-bearing).
+\providecommand{\xmpquote}[1]{#1}
+
+% Tighter spacing around display math for readability in long proofs.
+\AtBeginDocument{%
+  \setlength{\abovedisplayskip}{6pt plus 2pt minus 2pt}%
+  \setlength{\belowdisplayskip}{6pt plus 2pt minus 2pt}%
+}
+
+% Soft-wrap long URLs inside footnotes.
+\usepackage{xurl}
+
+% Nicer section titles for a long paper.
+\usepackage[compact]{titlesec}
+\titlespacing*{\section}{0pt}{1.2em}{0.5em}
+\titlespacing*{\subsection}{0pt}{1.0em}{0.4em}
+\titlespacing*{\subsubsection}{0pt}{0.8em}{0.3em}
+
+% --- SSRN-style title page (matches standard economics-journal presentation) ---
+\usepackage{titling}
+
+% Title: small caps, larger, centered, with room around it.
+\pretitle{\begin{center}\LARGE\scshape}
+\posttitle{\par\end{center}\vskip 1.5em}
+
+% Author: centered, normal size, footnote affiliation via \thanks{}.
+\preauthor{\begin{center}\large}
+\postauthor{\par\end{center}\vskip 0.5em}
+
+% Date: centered, smaller.
+\predate{\begin{center}\normalsize}
+\postdate{\par\end{center}\vskip 1.5em}
+
+% Abstract: indented both sides, bold centered "Abstract" label, slightly
+% smaller body text — matches the standard SSRN/economics-paper idiom.
+\usepackage{changepage}
+\renewenvironment{abstract}{%
+  \begin{center}%
+    \normalsize\textbf{Abstract}%
+  \end{center}%
+  \begin{adjustwidth}{2em}{2em}%
+  \small\noindent%
+}{%
+  \end{adjustwidth}%
+  \vskip 1em%
+}
+
+% Put the TOC on its own page, starting fresh after the title page.
+\usepackage{etoolbox}
+\pretocmd{\tableofcontents}{\clearpage}{}{}
+\apptocmd{\tableofcontents}{\clearpage}{}{}

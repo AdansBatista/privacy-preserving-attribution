@@ -1,0 +1,12 @@
+{
+  "epsilon": 1.0,
+  "delta": 1e-06,
+  "P": 12,
+  "delta_P": 1e-06,
+  "tau": 10000.0,
+  "sigma_T": 1000.0,
+  "beta_event": 0.1,
+  "beta_amount": 0.1,
+  "n_monte_carlo": 20000,
+  "rng_seed": 2026
+}

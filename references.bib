@@ -1,0 +1,699 @@
+% references.bib — Paper 3 (Privacy vs. Verifiability in Protocol Tax Attribution)
+% Paper-specific bibliography. Per the project's organizational convention,
+% each companion paper maintains its own .bib file. See papers/README.md.
+%
+% Organization mirrors the §2 literature-map structure of the manuscript:
+%   - ZK proof systems
+%   - Commitment schemes
+%   - Foundations of cryptography
+%   - Differential privacy
+%   - k-anonymity, re-identification, and anonymization
+%   - Privacy-preserving aggregation
+%   - Privacy in payment systems
+%   - Anonymous communication
+%   - Tax attribution in digital regimes
+%   - Named-not-engaged (§8 scope limits / §10 red-team pointers)
+
+% ========================================================================
+% ZK PROOF SYSTEMS
+% ========================================================================
+
+@inproceedings{goldwasser1989knowledge,
+  author    = {Goldwasser, Shafi and Micali, Silvio and Rackoff, Charles},
+  title     = {The Knowledge Complexity of Interactive Proof Systems},
+  booktitle = {SIAM Journal on Computing},
+  volume    = {18},
+  number    = {1},
+  pages     = {186--208},
+  year      = {1989},
+}
+
+@inproceedings{groth2016size,
+  author    = {Groth, Jens},
+  title     = {On the Size of Pairing-Based Non-Interactive Arguments},
+  booktitle = {EUROCRYPT 2016},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {9666},
+  pages     = {305--326},
+  publisher = {Springer},
+  year      = {2016},
+}
+
+@misc{gabizon2019plonk,
+  author       = {Gabizon, Ariel and Williamson, Zachary J. and Ciobotaru, Oana},
+  title        = {{PLONK}: Permutations over {Lagrange}-Bases for Oecumenical Noninteractive Arguments of Knowledge},
+  year         = {2019},
+  howpublished = {IACR Cryptology ePrint Archive, Report 2019/953},
+  url          = {https://eprint.iacr.org/2019/953},
+}
+
+@inproceedings{bensasson2018scalable,
+  author    = {Ben-Sasson, Eli and Bentov, Iddo and Horesh, Yinon and Riabzev, Michael},
+  title     = {Scalable, Transparent, and Post-Quantum Secure Computational Integrity},
+  booktitle = {IACR Cryptology ePrint Archive},
+  year      = {2018},
+  note      = {Report 2018/046},
+  url       = {https://eprint.iacr.org/2018/046},
+}
+
+@inproceedings{bunz2018bulletproofs,
+  author    = {B{\"u}nz, Benedikt and Bootle, Jonathan and Boneh, Dan and Poelstra, Andrew and Wuille, Pieter and Maxwell, Greg},
+  title     = {Bulletproofs: Short Proofs for Confidential Transactions and More},
+  booktitle = {2018 IEEE Symposium on Security and Privacy (S\&P)},
+  pages     = {315--334},
+  year      = {2018},
+}
+
+% ========================================================================
+% COMMITMENT SCHEMES
+% ========================================================================
+
+@inproceedings{pedersen1991noninteractive,
+  author    = {Pedersen, Torben Pryds},
+  title     = {Non-Interactive and Information-Theoretic Secure Verifiable Secret Sharing},
+  booktitle = {CRYPTO 1991},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {576},
+  pages     = {129--140},
+  publisher = {Springer},
+  year      = {1992},
+}
+
+% ========================================================================
+% FOUNDATIONS OF CRYPTOGRAPHY
+% ========================================================================
+
+@book{goldreich2001foundations,
+  author    = {Goldreich, Oded},
+  title     = {Foundations of Cryptography, Volume 1: Basic Tools},
+  publisher = {Cambridge University Press},
+  year      = {2001},
+}
+
+@book{goldreich2004foundations,
+  author    = {Goldreich, Oded},
+  title     = {Foundations of Cryptography, Volume 2: Basic Applications},
+  publisher = {Cambridge University Press},
+  year      = {2004},
+}
+
+@article{goldwasser1984probabilistic,
+  author    = {Goldwasser, Shafi and Micali, Silvio},
+  title     = {Probabilistic Encryption},
+  journal   = {Journal of Computer and System Sciences},
+  volume    = {28},
+  number    = {2},
+  pages     = {270--299},
+  year      = {1984},
+}
+
+@inproceedings{canetti2001universally,
+  author    = {Canetti, Ran},
+  title     = {Universally Composable Security: A New Paradigm for Cryptographic Protocols},
+  booktitle = {42nd IEEE Symposium on Foundations of Computer Science (FOCS)},
+  pages     = {136--145},
+  year      = {2001},
+}
+
+@misc{chaum1982blind,
+  author       = {Chaum, David},
+  title        = {Blind Signatures for Untraceable Payments},
+  year         = {1982},
+  howpublished = {CRYPTO 1982 (Advances in Cryptology, Plenum Press, 1983), pp. 199--203},
+}
+
+@article{chaum1985security,
+  author    = {Chaum, David},
+  title     = {Security Without Identification: Transaction Systems to Make {Big Brother} Obsolete},
+  journal   = {Communications of the ACM},
+  volume    = {28},
+  number    = {10},
+  pages     = {1030--1044},
+  year      = {1985},
+}
+
+% ========================================================================
+% DIFFERENTIAL PRIVACY
+% ========================================================================
+
+@inproceedings{dwork2006calibrating,
+  author    = {Dwork, Cynthia and McSherry, Frank and Nissim, Kobbi and Smith, Adam},
+  title     = {Calibrating Noise to Sensitivity in Private Data Analysis},
+  booktitle = {Theory of Cryptography Conference (TCC)},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {3876},
+  pages     = {265--284},
+  publisher = {Springer},
+  year      = {2006},
+}
+
+@article{dwork2014algorithmic,
+  author    = {Dwork, Cynthia and Roth, Aaron},
+  title     = {The Algorithmic Foundations of Differential Privacy},
+  journal   = {Foundations and Trends in Theoretical Computer Science},
+  volume    = {9},
+  number    = {3--4},
+  pages     = {211--407},
+  year      = {2014},
+}
+
+@misc{dwork2016concentrated,
+  author       = {Dwork, Cynthia and Rothblum, Guy N.},
+  title        = {Concentrated Differential Privacy},
+  year         = {2016},
+  howpublished = {arXiv:1603.01887 [cs.DS]},
+  eprint       = {1603.01887},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.DS},
+  url          = {https://arxiv.org/abs/1603.01887},
+}
+
+@inproceedings{abadi2016deep,
+  author    = {Abadi, Martin and Chu, Andy and Goodfellow, Ian and McMahan, H. Brendan and Mironov, Ilya and Talwar, Kunal and Zhang, Li},
+  title     = {Deep Learning with Differential Privacy},
+  booktitle = {Proceedings of the 2016 ACM SIGSAC Conference on Computer and Communications Security (CCS)},
+  pages     = {308--318},
+  year      = {2016},
+}
+
+@inproceedings{mcsherry2009pinq,
+  author    = {McSherry, Frank},
+  title     = {Privacy Integrated Queries: An Extensible Platform for Privacy-Preserving Data Analysis},
+  booktitle = {Proceedings of the 2009 ACM SIGMOD International Conference on Management of Data},
+  pages     = {19--30},
+  year      = {2009},
+}
+
+@inproceedings{kifer2011nofreelunch,
+  author    = {Kifer, Daniel and Machanavajjhala, Ashwin},
+  title     = {No Free Lunch in Data Privacy},
+  booktitle = {Proceedings of the 2011 ACM SIGMOD International Conference on Management of Data},
+  pages     = {193--204},
+  year      = {2011},
+}
+
+@inproceedings{dwork2010boosting,
+  author    = {Dwork, Cynthia and Rothblum, Guy N. and Vadhan, Salil},
+  title     = {Boosting and Differential Privacy},
+  booktitle = {51st Annual IEEE Symposium on Foundations of Computer Science (FOCS)},
+  pages     = {51--60},
+  year      = {2010},
+}
+
+@inproceedings{rogers2016adaptive,
+  author    = {Rogers, Ryan M. and Roth, Aaron and Ullman, Jonathan and Vadhan, Salil},
+  title     = {Privacy Odometers and Filters: Pay-as-you-Go Composition},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2016},
+}
+
+@inproceedings{kairouz2017composition,
+  author    = {Kairouz, Peter and Oh, Sewoong and Viswanath, Pramod},
+  title     = {The Composition Theorem for Differential Privacy},
+  booktitle = {IEEE Transactions on Information Theory},
+  volume    = {63},
+  number    = {6},
+  pages     = {4037--4049},
+  year      = {2017},
+}
+
+% ========================================================================
+% k-ANONYMITY, RE-IDENTIFICATION, AND ANONYMIZATION
+% ========================================================================
+
+@article{sweeney2002k,
+  author    = {Sweeney, Latanya},
+  title     = {k-Anonymity: A Model for Protecting Privacy},
+  journal   = {International Journal of Uncertainty, Fuzziness and Knowledge-Based Systems},
+  volume    = {10},
+  number    = {5},
+  pages     = {557--570},
+  year      = {2002},
+}
+
+@inproceedings{narayanan2008robust,
+  author    = {Narayanan, Arvind and Shmatikov, Vitaly},
+  title     = {Robust De-anonymization of Large Sparse Datasets},
+  booktitle = {2008 IEEE Symposium on Security and Privacy (S\&P)},
+  pages     = {111--125},
+  year      = {2008},
+}
+
+@inproceedings{narayanan2009socialgraph,
+  author    = {Narayanan, Arvind and Shmatikov, Vitaly},
+  title     = {De-anonymizing Social Networks},
+  booktitle = {2009 IEEE Symposium on Security and Privacy (S\&P)},
+  pages     = {173--187},
+  year      = {2009},
+}
+
+@article{ohm2010broken,
+  author    = {Ohm, Paul},
+  title     = {Broken Promises of Privacy: Responding to the Surprising Failure of Anonymization},
+  journal   = {UCLA Law Review},
+  volume    = {57},
+  pages     = {1701--1777},
+  year      = {2010},
+}
+
+@article{demontjoye2015unique,
+  author    = {de Montjoye, Yves-Alexandre and Radaelli, Laura and Singh, Vivek Kumar and Pentland, Alex},
+  title     = {Unique in the Shopping Mall: On the Reidentifiability of Credit Card Metadata},
+  journal   = {Science},
+  volume    = {347},
+  number    = {6221},
+  pages     = {536--539},
+  year      = {2015},
+}
+
+% ========================================================================
+% PRIVACY-PRESERVING AGGREGATION
+% ========================================================================
+
+@inproceedings{bonawitz2017secureagg,
+  author    = {Bonawitz, Keith and Ivanov, Vladimir and Kreuter, Ben and Marcedone, Antonio and McMahan, H. Brendan and Patel, Sarvar and Ramage, Daniel and Segal, Aaron and Seth, Karn},
+  title     = {Practical Secure Aggregation for Privacy-Preserving Machine Learning},
+  booktitle = {Proceedings of the 2017 ACM SIGSAC Conference on Computer and Communications Security (CCS)},
+  pages     = {1175--1191},
+  year      = {2017},
+}
+
+@inproceedings{corrigangibbs2017prio,
+  author    = {Corrigan-Gibbs, Henry and Boneh, Dan},
+  title     = {{Prio}: Private, Robust, and Scalable Computation of Aggregate Statistics},
+  booktitle = {14th USENIX Symposium on Networked Systems Design and Implementation (NSDI)},
+  pages     = {259--282},
+  year      = {2017},
+}
+
+@inproceedings{kamara2010searchable,
+  author    = {Kamara, Seny and Papamanthou, Charalampos and Roeder, Tom},
+  title     = {Dynamic Searchable Symmetric Encryption},
+  booktitle = {Proceedings of the 2012 ACM Conference on Computer and Communications Security (CCS)},
+  pages     = {965--976},
+  year      = {2012},
+}
+
+% ========================================================================
+% PRIVACY IN PAYMENT SYSTEMS
+% ========================================================================
+
+@inproceedings{sasson2014zerocash,
+  author    = {Ben-Sasson, Eli and Chiesa, Alessandro and Garman, Christina and Green, Matthew and Miers, Ian and Tromer, Eran and Virza, Madars},
+  title     = {{Zerocash}: Decentralized Anonymous Payments from Bitcoin},
+  booktitle = {2014 IEEE Symposium on Security and Privacy (S\&P)},
+  pages     = {459--474},
+  year      = {2014},
+}
+
+@inproceedings{kappos2018zcash,
+  author    = {Kappos, George and Yousaf, Haaroon and Maller, Mary and Meiklejohn, Sarah},
+  title     = {An Empirical Analysis of Anonymity in {Zcash}},
+  booktitle = {27th USENIX Security Symposium},
+  pages     = {463--477},
+  year      = {2018},
+}
+
+@inproceedings{moser2018empirical,
+  author    = {M{\"o}ser, Malte and Soska, Kyle and Heilman, Ethan and Lee, Kevin and Heffan, Henry and Srivastava, Shashvat and Hogan, Kyle and Hennessey, Jason and Miller, Andrew and Narayanan, Arvind and Christin, Nicolas},
+  title     = {An Empirical Analysis of Traceability in the {Monero} Blockchain},
+  booktitle = {Proceedings on Privacy Enhancing Technologies (PoPETs)},
+  volume    = {2018},
+  number    = {3},
+  pages     = {143--163},
+  year      = {2018},
+}
+
+@inproceedings{bonneau2015sok,
+  author    = {Bonneau, Joseph and Miller, Andrew and Clark, Jeremy and Narayanan, Arvind and Kroll, Joshua A. and Felten, Edward W.},
+  title     = {{SoK}: Research Perspectives and Challenges for {Bitcoin} and Cryptocurrencies},
+  booktitle = {2015 IEEE Symposium on Security and Privacy (S\&P)},
+  pages     = {104--121},
+  year      = {2015},
+}
+
+@inproceedings{meiklejohn2013fistful,
+  author    = {Meiklejohn, Sarah and Pomarole, Marjori and Jordan, Grant and Levchenko, Kirill and McCoy, Damon and Voelker, Geoffrey M. and Savage, Stefan},
+  title     = {A Fistful of {Bitcoins}: Characterizing Payments Among Men with No Names},
+  booktitle = {Proceedings of the 2013 Internet Measurement Conference (IMC)},
+  pages     = {127--140},
+  year      = {2013},
+}
+
+@inproceedings{biryukov2014deanonymisation,
+  author    = {Biryukov, Alex and Khovratovich, Dmitry and Pustogarov, Ivan},
+  title     = {Deanonymisation of Clients in {Bitcoin} {P2P} Network},
+  booktitle = {Proceedings of the 2014 ACM SIGSAC Conference on Computer and Communications Security (CCS)},
+  pages     = {15--29},
+  year      = {2014},
+}
+
+@misc{biryukov2019privacy,
+  author       = {Biryukov, Alex and Khovratovich, Dmitry},
+  title        = {Deanonymization and Linkability of Cryptocurrency Transactions Based on Network Analysis},
+  year         = {2019},
+  howpublished = {Proceedings of the 2019 IEEE European Symposium on Security and Privacy (EuroS\&P)},
+}
+
+@techreport{bis2021cbdc,
+  author      = {{Bank for International Settlements}},
+  title       = {Central Bank Digital Currencies: System Design and Interoperability},
+  institution = {BIS},
+  year        = {2021},
+  type        = {Report 3 in a series of collaborations from a group of central banks},
+  url         = {https://www.bis.org/publ/othp42_system_design.htm},
+}
+
+% ========================================================================
+% ANONYMOUS COMMUNICATION (adjacent literature)
+% ========================================================================
+
+@inproceedings{dingledine2004tor,
+  author    = {Dingledine, Roger and Mathewson, Nick and Syverson, Paul},
+  title     = {{Tor}: The Second-Generation Onion Router},
+  booktitle = {Proceedings of the 13th USENIX Security Symposium},
+  pages     = {303--320},
+  year      = {2004},
+}
+
+@article{danezis2005mixnet,
+  author    = {Danezis, George and Diaz, Claudia},
+  title     = {A Survey of Anonymous Communication Channels},
+  journal   = {Microsoft Research Technical Report},
+  year      = {2008},
+  note      = {MSR-TR-2008-35},
+}
+
+@inproceedings{murdoch2005low,
+  author    = {Murdoch, Steven J. and Danezis, George},
+  title     = {Low-Cost Traffic Analysis of {Tor}},
+  booktitle = {2005 IEEE Symposium on Security and Privacy (S\&P)},
+  pages     = {183--195},
+  year      = {2005},
+}
+
+@inproceedings{kocher1996timing,
+  author    = {Kocher, Paul C.},
+  title     = {Timing Attacks on Implementations of {Diffie-Hellman}, {RSA}, {DSS}, and Other Systems},
+  booktitle = {CRYPTO 1996},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {1109},
+  pages     = {104--113},
+  publisher = {Springer},
+  year      = {1996},
+}
+
+% ========================================================================
+% TAX ATTRIBUTION IN DIGITAL REGIMES (problem statement)
+% ========================================================================
+
+@techreport{oecd2021pillarone,
+  author      = {{Organisation for Economic Co-operation and Development}},
+  title       = {Statement on a Two-Pillar Solution to Address the Tax Challenges Arising from the Digitalisation of the Economy},
+  institution = {OECD / G20 Inclusive Framework on BEPS},
+  year        = {2021},
+  url         = {https://www.oecd.org/tax/beps/statement-on-a-two-pillar-solution-to-address-the-tax-challenges-arising-from-the-digitalisation-of-the-economy-october-2021.htm},
+}
+
+@techreport{oecd2022pillarone,
+  author      = {{Organisation for Economic Co-operation and Development}},
+  title       = {Pillar One — {Amount A}: Draft Model Rules for Tax Base Determinations},
+  institution = {OECD / G20 Inclusive Framework on BEPS},
+  year        = {2022},
+}
+
+% ========================================================================
+% MEV / CONSENSUS LAYER (cross-reference from Paper 1 — used lightly in §4)
+% ========================================================================
+
+@inproceedings{daian2020flash,
+  author    = {Daian, Philip and Goldfeder, Steven and Kell, Tyler and Li, Yunqi and Zhao, Xueyuan and Bentov, Iddo and Breidenbach, Lorenz and Juels, Ari},
+  title     = {Flash Boys 2.0: Frontrunning in Decentralized Exchanges, Miner Extractable Value, and Consensus Instability},
+  booktitle = {2020 IEEE Symposium on Security and Privacy (S\&P)},
+  pages     = {910--927},
+  year      = {2020},
+}
+
+% ========================================================================
+% VERIFIABLE RANDOMNESS (DP noise-generation source — §4)
+% ========================================================================
+
+@inproceedings{boneh2018vdf,
+  author    = {Boneh, Dan and Bonneau, Joseph and B{\"u}nz, Benedikt and Fisch, Ben},
+  title     = {Verifiable Delay Functions},
+  booktitle = {CRYPTO 2018},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {10991},
+  pages     = {757--788},
+  publisher = {Springer},
+  year      = {2018},
+}
+
+@inproceedings{cascudo2017scrape,
+  author    = {Cascudo, Ignacio and David, Bernardo},
+  title     = {{SCRAPE}: Scalable Randomness Attested by Public Entities},
+  booktitle = {Applied Cryptography and Network Security (ACNS)},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {10355},
+  pages     = {537--556},
+  publisher = {Springer},
+  year      = {2017},
+}
+
+% ========================================================================
+% HEAVY-TAILED TRANSACTION DISTRIBUTIONS (§5.3, §7 calibration)
+% ========================================================================
+
+@article{newman2005powerlaws,
+  author    = {Newman, Mark E. J.},
+  title     = {Power Laws, {Pareto} Distributions and {Zipf's} Law},
+  journal   = {Contemporary Physics},
+  volume    = {46},
+  number    = {5},
+  pages     = {323--351},
+  year      = {2005},
+}
+
+% ========================================================================
+% PFITZMANN-HANSEN PRIVACY TERMINOLOGY (§3 commitment)
+% ========================================================================
+
+@misc{pfitzmann2010terminology,
+  author       = {Pfitzmann, Andreas and Hansen, Marit},
+  title        = {A Terminology for Talking about Privacy by Data Minimization: Anonymity, Unlinkability, Undetectability, Unobservability, Pseudonymity, and Identity Management},
+  year         = {2010},
+  howpublished = {v0.34},
+  url          = {http://dud.inf.tu-dresden.de/literatur/Anon_Terminology_v0.34.pdf},
+}
+
+% ========================================================================
+% PLATFORM-PRIVACY / SURVEILLANCE (adjacent — named in §1/§8, not engaged)
+% ========================================================================
+
+@book{zuboff2019age,
+  author    = {Zuboff, Shoshana},
+  title     = {The Age of Surveillance Capitalism},
+  publisher = {PublicAffairs},
+  year      = {2019},
+}
+
+% ========================================================================
+% NAMED-NOT-ENGAGED (§8 scope limits / §10 red-team pointers)
+% ========================================================================
+
+@inproceedings{machanavajjhala2007ldiversity,
+  author    = {Machanavajjhala, Ashwin and Kifer, Daniel and Gehrke, Johannes and Venkitasubramaniam, Muthuramakrishnan},
+  title     = {{l}-Diversity: Privacy Beyond {k}-Anonymity},
+  booktitle = {ACM Transactions on Knowledge Discovery from Data},
+  volume    = {1},
+  number    = {1},
+  year      = {2007},
+}
+
+@inproceedings{li2007tcloseness,
+  author    = {Li, Ninghui and Li, Tiancheng and Venkatasubramanian, Suresh},
+  title     = {{t}-Closeness: Privacy Beyond {k}-Anonymity and {l}-Diversity},
+  booktitle = {IEEE 23rd International Conference on Data Engineering (ICDE)},
+  pages     = {106--115},
+  year      = {2007},
+}
+
+@article{shor1997quantum,
+  author    = {Shor, Peter W.},
+  title     = {Polynomial-Time Algorithms for Prime Factorization and Discrete Logarithms on a Quantum Computer},
+  journal   = {SIAM Journal on Computing},
+  volume    = {26},
+  number    = {5},
+  pages     = {1484--1509},
+  year      = {1997},
+}
+
+% =============================================================================
+% Additional references for Theorem 2 derivation (Phase 2 — closed-form c)
+% =============================================================================
+
+@inproceedings{bun2016concentrated,
+  author    = {Bun, Mark and Steinke, Thomas},
+  title     = {Concentrated Differential Privacy: Simplifications, Extensions, and Lower Bounds},
+  booktitle = {Theory of Cryptography Conference (TCC)},
+  pages     = {635--658},
+  year      = {2016},
+  publisher = {Springer},
+  doi       = {10.1007/978-3-662-53641-4_24},
+  note      = {Introduces zero-concentrated DP (zCDP) as a Renyi-divergence-based privacy notion with linear composition for Gaussian mechanism},
+}
+
+@inproceedings{mironov2017renyi,
+  author    = {Mironov, Ilya},
+  title     = {{R{\'e}nyi} Differential Privacy},
+  booktitle = {30th IEEE Computer Security Foundations Symposium (CSF)},
+  pages     = {263--275},
+  year      = {2017},
+  publisher = {IEEE},
+  doi       = {10.1109/CSF.2017.11},
+  note      = {Introduces RDP as a DP relaxation; equivalent to zCDP for Gaussian mechanism},
+}
+
+@article{kifer2014pufferfish,
+  author    = {Kifer, Daniel and Machanavajjhala, Ashwin},
+  title     = {Pufferfish: A Framework for Mathematical Privacy Definitions},
+  journal   = {ACM Transactions on Database Systems},
+  volume    = {39},
+  number    = {1},
+  pages     = {3:1--3:36},
+  year      = {2014},
+  publisher = {ACM},
+  doi       = {10.1145/2514689},
+  note      = {Generalization of differential privacy that allows explicit modeling of auxiliary information; basis for our alpha-augmented bound},
+}
+
+@inproceedings{yeom2018privacy,
+  author    = {Yeom, Samuel and Giacomelli, Irene and Fredrikson, Matt and Jha, Somesh},
+  title     = {Privacy Risk in Machine Learning: Analyzing the Connection to Overfitting},
+  booktitle = {31st IEEE Computer Security Foundations Symposium (CSF)},
+  pages     = {268--282},
+  year      = {2018},
+  publisher = {IEEE},
+  doi       = {10.1109/CSF.2018.00027},
+  note      = {Establishes the 1/sqrt(k) scaling for Gaussian membership-inference attacks against cohort-aggregated mechanisms},
+}
+
+@inproceedings{canonne2020discrete,
+  author    = {Canonne, Cl{\'e}ment L. and Kamath, Gautam and Steinke, Thomas},
+  title     = {The Discrete {Gaussian} for Differential Privacy},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  volume    = {33},
+  pages     = {15676--15688},
+  year      = {2020},
+  note      = {Discrete Gaussian mechanism for DP under integer-valued randomness; relevant for verifiable-randomness deployments},
+}
+
+@inproceedings{dwork2010continual,
+  author    = {Dwork, Cynthia and Naor, Moni and Pitassi, Toniann and Rothblum, Guy N.},
+  title     = {Differential Privacy under Continual Observation},
+  booktitle = {Proceedings of the 42nd ACM Symposium on Theory of Computing (STOC)},
+  pages     = {715--724},
+  year      = {2010},
+  publisher = {ACM},
+  doi       = {10.1145/1806689.1806787},
+  note      = {Foundational paper on DP for streams and repeated releases; relevant to P-period composition},
+}
+
+@inproceedings{chan2010private,
+  author    = {Chan, T-H. Hubert and Shi, Elaine and Song, Dawn},
+  title     = {Private and Continual Release of Statistics},
+  booktitle = {37th International Colloquium on Automata, Languages, and Programming (ICALP)},
+  pages     = {405--417},
+  year      = {2010},
+  publisher = {Springer},
+  doi       = {10.1007/978-3-642-14165-2_35},
+  note      = {Continual-observation DP with logarithmic-overhead composition; alternative path for P-period composition analysis},
+}
+
+@inproceedings{chaum1988untraceable,
+  author    = {Chaum, David and Fiat, Amos and Naor, Moni},
+  title     = {Untraceable Electronic Cash},
+  booktitle = {Advances in Cryptology --- CRYPTO '88},
+  pages     = {319--327},
+  year      = {1990},
+  publisher = {Springer},
+  doi       = {10.1007/0-387-34799-2_25},
+  note      = {Foundational e-cash with double-spending detection; canonical anonymous-payments lineage predating Zcash/Monero},
+}
+
+@phdthesis{brands1993untraceable,
+  author    = {Brands, Stefan A.},
+  title     = {Untraceable Off-line Cash in Wallets with Observers},
+  school    = {CWI Amsterdam},
+  year      = {1993},
+  note      = {Brands credentials and offline e-cash; basis for several anonymous-credential systems},
+}
+
+@inproceedings{camenisch2001efficient,
+  author    = {Camenisch, Jan and Lysyanskaya, Anna},
+  title     = {An Efficient System for Non-Transferable Anonymous Credentials with Optional Anonymity Revocation},
+  booktitle = {Advances in Cryptology --- EUROCRYPT 2001},
+  pages     = {93--118},
+  year      = {2001},
+  publisher = {Springer},
+  doi       = {10.1007/3-540-44987-6_7},
+  note      = {Camenisch-Lysyanskaya signatures and anonymous credentials; canonical privacy-credential primitive},
+}
+
+@inproceedings{camenisch2004signature,
+  author    = {Camenisch, Jan and Lysyanskaya, Anna},
+  title     = {Signature Schemes and Anonymous Credentials from Bilinear Maps},
+  booktitle = {Advances in Cryptology --- CRYPTO 2004},
+  pages     = {56--72},
+  year      = {2004},
+  publisher = {Springer},
+  doi       = {10.1007/978-3-540-28628-8_4},
+  note      = {Bilinear-map CL signatures; basis for many subsequent attribute-based and pseudonym systems},
+}
+
+@inproceedings{dinur2003revealing,
+  author    = {Dinur, Irit and Nissim, Kobbi},
+  title     = {Revealing Information While Preserving Privacy},
+  booktitle = {Proceedings of the 22nd ACM SIGMOD-SIGACT-SIGART Symposium on Principles of Database Systems (PODS)},
+  pages     = {202--210},
+  year      = {2003},
+  publisher = {ACM},
+  doi       = {10.1145/773153.773173},
+  note      = {Reconstruction-attack lower bounds; foundational for understanding DP's necessary noise scale},
+}
+
+@inproceedings{shi2011privacy,
+  author    = {Shi, Elaine and Chan, T-H. Hubert and Rieffel, Eleanor and Chow, Richard and Song, Dawn},
+  title     = {Privacy-Preserving Aggregation of Time-Series Data},
+  booktitle = {Network and Distributed System Security Symposium (NDSS)},
+  year      = {2011},
+  note      = {Encrypted aggregation with DP noise for time-series; directly relevant to the protocol-level periodic-aggregate setting of this paper},
+}
+
+
+@book{polyanskiy2025information,
+  author    = {Polyanskiy, Yury and Wu, Yihong},
+  title     = {Information Theory: From Coding to Learning},
+  publisher = {Cambridge University Press},
+  year      = {2025},
+  note      = {Reference for the total-variation chain rule under conditional independence; Chapter 7 covers the variational characterization and data-processing properties used in Lemma 1},
+}
+
+@article{dong2022gaussian,
+  author    = {Dong, Jinshuo and Roth, Aaron and Su, Weijie},
+  title     = {Gaussian Differential Privacy},
+  journal   = {Journal of the Royal Statistical Society Series B},
+  volume    = {84},
+  number    = {1},
+  pages     = {3--37},
+  year      = {2022},
+  note      = {f-DP and Gaussian-DP framework; alternative to (eps,delta)-DP and zCDP/RDP that admits closed-form composition for Gaussian mechanisms},
+}
+
+@inproceedings{balle2018improving,
+  author    = {Balle, Borja and Wang, Yu-Xiang},
+  title     = {Improving the {Gaussian} Mechanism for Differential Privacy: Analytical Calibration and Optimal Denoising},
+  booktitle = {International Conference on Machine Learning (ICML)},
+  year      = {2018},
+  note      = {Analytic Gaussian mechanism: tight noise calibration via numerical inversion of the Gaussian-DP guarantee},
+}

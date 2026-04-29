@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+
+# R
+.Rhistory
+.Rapp.history
+.RData
+.Ruserdata
+
+# Pandoc / LaTeX intermediate artefacts
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.bcf
+*.run.xml
+*-blx.bib
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# Build outputs that should be regeneratable but are tracked for reviewer convenience:
+# We keep simulations/results/*.csv, simulations/figures/*.png, and
+# derivation/theorem2-dual-bound-output.txt in the repo so reviewers see the
+# expected outputs without re-running.
